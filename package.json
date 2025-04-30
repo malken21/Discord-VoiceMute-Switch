@@ -1,0 +1,26 @@
+{
+  "name": "discord-voicemute-switch",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npx tsx src/index.ts",
+    "setup": "npm install"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "discord-rpc": "^4.0.1",
+    "dotenv": "^16.5.0",
+    "open": "^10.1.2",
+    "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "@types/discord-rpc": "^4.0.9",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3",
+    "express": "^5.1.0"
+  }
+}
