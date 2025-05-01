@@ -46,6 +46,7 @@ rpc.on('ready', async () => {
 
     local_server.app.get('/', async (req, res) => {
         const voiceSettings = await rpc.getVoiceSettings();
+        res.send(voiceSettings.mute ? "unmuted" : "muted");
         rpc.setVoiceSettings({
             mute: !voiceSettings.mute,
             automaticGainControl: false,
@@ -55,7 +56,6 @@ rpc.on('ready', async () => {
             silenceWarning: false,
             deaf: false
         });
-        res.send(voiceSettings.mute ? "unmuted" : "muted");
     });
 
     local_server.app.get('/close', async (req, res) => {
