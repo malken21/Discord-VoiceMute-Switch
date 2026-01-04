@@ -8,19 +8,22 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "npx tsx src/index.ts",
-    "setup": "npm install"
+    "setup": "npm install",
+    "build": "npx esbuild src/index.ts --bundle --platform=node --target=node18 --external:express --external:open --external:discord-rpc --outfile=dist/index.cjs && npx pkg dist/index.cjs --target node18-win-x64 --output discord-voicemute-switch.exe"
   },
   "dependencies": {
     "axios": "^1.9.0",
     "discord-rpc": "^4.0.1",
     "dotenv": "^16.5.0",
-    "open": "^10.1.2",
+    "open": "^8.4.2",
     "tsx": "^4.19.4"
   },
   "devDependencies": {
     "@types/discord-rpc": "^4.0.9",
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.3",
-    "express": "^5.1.0"
+    "esbuild": "^0.27.2",
+    "express": "^5.1.0",
+    "pkg": "^5.8.1"
   }
 }
