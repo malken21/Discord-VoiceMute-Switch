@@ -44,7 +44,7 @@ try {
 
         # exeを起動
         Write-Host "Starting application: $outputFile" -ForegroundColor Green
-        Start-Process -FilePath $outputFile
+        Start-Process -FilePath $outputFile -NoNewWindow -Wait
     }
     else {
         Write-Error "No executable asset found in the latest release."
